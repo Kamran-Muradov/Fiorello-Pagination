@@ -1,0 +1,23 @@
+﻿@model SliderEditVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="image mb-5">
+            <img src="~/img/@Model.Image" style="width:300px;height:200px" alt="" />
+        </div>
+        <form class="forms-sample" method="post" asp-action="Edit" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="inputCategoryName">Slider Image</label>
+                <input asp-for="NewImage" accept="image/*" class="form-control" id="inputCategoryName" placeholder="Category.." maxlength="100">
+                <span asp-validation-for="NewImage" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
+            <a class="btn btn-light" asp-action="Index">Cancel</a>
+        </form>
+    </div>
+</div>
+
